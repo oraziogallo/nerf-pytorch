@@ -189,7 +189,7 @@ if __name__ == "__main__":
         "--num-variations",
         type=int,
         default=1,
-        help="Number of random 'ray batches' to draw per image",
+        help="Number of random 'ray batches' to draw per image.",
     )
     parser.add_argument(
         "--sample-all",
@@ -197,7 +197,7 @@ if __name__ == "__main__":
         help="Sample all rays for the image. Overrides --num-random-rays.",
     )
     parser.add_argument(
-        "--randomseed", type=int, default=3920, help="Random seeed, for repeatability"
+        "--randomseed", type=int, default=3920, help="Random seeed, for repeatability."
     )
     args = parser.parse_args()
 

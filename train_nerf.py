@@ -27,6 +27,9 @@ def main():
         default="",
         help="Path to load saved checkpoint from.",
     )
+    parser.add_argument(
+        "--gpuid", type=int, default=0, help="GPU to use."
+    )
     configargs = parser.parse_args()
 
     # Read config file.
@@ -95,7 +98,8 @@ def main():
 
     # Device on which to run.
     if torch.cuda.is_available():
-        device = "cuda"
+        cuda = "cuda:" + str(configargs.gpuid)
+        device = torch.device(cuda)
     else:
         device = "cpu"
 
